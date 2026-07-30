@@ -1,0 +1,237 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.0/dist/font-face.css');
+
+* {
+    font-family: 'Shabnam', sans-serif ;
+}
+
+
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* پس‌زمینه مدرن تیره با گرادیانت شعاعی */
+    background: radial-gradient(circle at center, #1e2638 0%, #0d1117 100%);
+    background-attachment: fixed;
+}
+
+
+.card {
+    width: 300px;
+    
+    /* ۱. رنگ تیره اما با شفافیت (rgba) به جای مشکی خالص */
+    background: rgba(255, 255, 255, 0.07); 
+    
+    /* ۲. افکت شیشه‌ای و تار کردن پشت کارت */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* برای پشتیبانی در مرورگرهای آیفون/سافاری */
+    
+    /* ۳. خط مرزی باریک و شیک مثل لبه شیشه */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    
+    border-radius: 30px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    
+    /* سایه نرم و عمیق */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    position: relative;
+    z-index: 1;
+}
+
+
+img{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border: 4px solid white;
+}
+h1{
+  font-size: 22px;
+    color: #ffffff; /* سفید یکدست و تمیز */
+    margin-bottom: 6px;
+    font-weight: bold;
+}
+.sub-title{
+  font-size: 14px;
+    color: #95e4ff; /* آبی روشن متناسب با تم منو */
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+.motto{
+  font-size: 13.5px;
+    color: #a0a0a0; /* خاکستری ملایم که چشم رو اذیت نکنه */
+    line-height: 1.7;
+    margin-bottom: 22px;
+    
+}
+  /* برای پررنگ‌تر و خواناتر شدن متن‌های پاراگراف */
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+button:active{
+  transform:scale(0.95);
+}
+/* --- پس‌زمینه کل منو (حالت تار و شیشه‌ای) --- */
+.menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px); /* افکت شیشه‌ای و تار شدن پشت منو */
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+/* --- باکس اصلی داخل منو --- */
+.menu-content {
+    background: #252529;
+    padding: 25px;
+    border-radius: 25px;
+    text-align: center;
+    width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    
+    /* انیمیشن باز شدن */
+    transform: scale(0.7);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.menu.show .menu-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.menu-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #95e4ff;
+}
+
+/* --- شخصی‌سازی لینک‌های ارتباطی (دارای آیکون) --- */
+.menu-content a {
+    display: flex; /* استفاده از فلکس‌باکس برای تراز کردن */
+    align-items: center; /* تراز عمودی */
+    justify-content: center; /* تراز افقی (آیکون و متن در وسط) */
+    gap: 12px; /* فاصله بین آیکون و متن */
+    color: white;
+    text-decoration: none;
+    margin: 12px 0;
+    padding: 12px 20px; /* افزایش پدینگ افقی */
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all 0.25s ease;
+    width: auto; /* اجازه بده پهنا متناسب با متن باشه */
+}
+
+/* بزرگتر کردن اندازه آیکون‌ها */
+.menu-content a i {
+    font-size: 1.2rem;
+}
+
+
+/* --- شخصی‌سازی رنگ اختصاصی هر شبکه اجتماعی --- */
+.menu-content a[href*="t.me"] {
+    background: linear-gradient(135deg, #229ED9, #0088cc);
+    box-shadow: 0 4px 15px rgba(34, 158, 217, 0.3);
+}
+
+.menu-content a[href*="instagram"] {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+}
+
+.menu-content a[href*="wa.me"] {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+/* افکت لمس دکمه‌ها */
+.menu-content a:active {
+    transform: scale(0.96);
+}
+
+/* --- دکمه بستن --- */
+.menu-content button {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    color: #ff6b6b;
+    border: 1px solid #ff6b6b;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu-content button:active {
+    background: #ff6b6b;
+    color: white;
+}
+
+/* --- استایل گوی‌های نورانی --- */
+.orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px); /* ایجاد حالت هاله نورانی و تار */
+    z-index: 0; /* رفتن به پشت کارت */
+    opacity: 0.6;
+    animation: moveOrb 10s infinite alternate ease-in-out;
+}
+
+/* گوی اول: آبی روشن */
+.orb-1 {
+    width: 250px;
+    height: 250px;
+    background: #00d2ff;
+    top: 20%;
+    left: 15%;
+}
+
+/* گوی دوم: بنفش مدرن */
+.orb-2 {
+    width: 300px;
+    height: 300px;
+    background: #928dab;
+    bottom: 15%;
+    right: 15%;
+    animation-delay: -5s; /* تاخیر برای ناهماهنگ شدن حرکت دو گوی */
+}
+
+/* --- انیمیشن حرکت نرم گوی‌ها --- */
+@keyframes moveOrb {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        transform: translate(40px, -50px) scale(1.1);
+    }
+    100% {
+        transform: translate(-30px, 30px) scale(0.9);
+    }
+}
+
